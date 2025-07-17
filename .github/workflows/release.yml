@@ -1,4 +1,4 @@
-name: 包含dae的固件
+name: 包含daed的固件
 
 on:
   repository_dispatch:
@@ -6,7 +6,7 @@ on:
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: master
+  REPO_BRANCH: openwrt-24.10
   SSH_ENABLED: false
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
