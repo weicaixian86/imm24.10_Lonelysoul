@@ -176,7 +176,7 @@ jobs:
         script: |
           const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
           const telegramChatId = process.env.TELEGRAM_CHAT_ID;
-          const message = 'Immortalwrt基于今日最新代码已经编译完成了！下载地址：https://github.com/lonelysoul/immortalwrt/releases';
+          const message = 'Immortalwrt基于今日最新代码已经编译完成了！';
           const response = await fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
