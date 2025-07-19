@@ -168,21 +168,3 @@ jobs:
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: 通知Telegram
-      if: steps.compile.outputs.status == 'success' && !cancelled()
-      uses: actions/github-script@v7
-      with:
-        script: |
-          const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
-          const telegramChatId = process.env.TELEGRAM_CHAT_ID;
-          const message = 'Immortalwrt基于今日最新代码已经编译完成了！';
-          const response = await fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ chat_id: telegramChatId, text: message })
-          });
-          if (!response.ok) throw new Error('Telegram通知失败');
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
