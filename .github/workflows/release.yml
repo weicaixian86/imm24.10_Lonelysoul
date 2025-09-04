@@ -1,7 +1,6 @@
-name: 推荐，含daed、passwall、dockerm的固件
+name: 推荐，含diskman、dockerman、easytier、netdata、openclash、passwall的固件
 
 on:
-  repository_dispatch:
   workflow_dispatch:
 
 env:
